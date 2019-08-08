@@ -4,19 +4,19 @@
       "id": 1,
       "name": "Woody",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": 22
+      "likes": 5
     },
     {
       "id": 2,
       "name": "Buzz Lightyear",
       "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
-      "likes": 15
+      "likes": 8
     },
     {
       "id": 3,
       "name": "Mr. Potato Head",
       "image": "https://vignette.wikia.nocookie.net/universe-of-smash-bros-lawl/images/d/d8/Mr-potato-head-toy-story.gif/revision/latest?cb=20151129131217",
-      "likes": 7
+      "likes": 3
     },
     {
       "id": 4,
@@ -28,7 +28,7 @@
       "id": 5,
       "name": "Rex",
       "image": "http://umich.edu/~chemh215/W11HTML/SSG5/ssg5.2/FRex.png",
-      "likes": 5
+      "likes": 1
     },
     {
       "id": 6,
@@ -47,30 +47,6 @@
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
       "likes": -2
-    },
-    {
-      "name": "Jessie",
-      "image": "https://vignette.wikia.nocookie.net/p__/images/8/88/Jessie_Toy_Story_3.png/revision/latest?cb=20161023024601&path-prefix=protagonist",
-      "likes": 3,
-      "id": 9
-    },
-    {
-      "name": "Mickey Mouse",
-      "image": "http://www.pngmart.com/files/4/Mickey-Mouse-Transparent-PNG.png",
-      "likes": 2,
-      "id": 10
-    },
-    {
-      "name": "Timon",
-      "image": "http://www.pngmart.com/files/4/The-Lion-King-PNG-Transparent-Picture.png",
-      "likes": 1407,
-      "id": 11
-    },
-    {
-      "name": "Bicycle",
-      "image": "http://www.pngmart.com/files/6/Bicycle-PNG-Free-Download.png",
-      "likes": 6,
-      "id": 12
     }
   ]
 }
