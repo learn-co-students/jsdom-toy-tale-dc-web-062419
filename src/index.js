@@ -1,7 +1,5 @@
 
 document.addEventListener("DOMContentLoaded", function() {
-  console.log('Page successfully loaded!')
-  // document.getElementById('toy-collection').addEventListener("submit", newToy)
   fetchAllToys()
 })
 
@@ -51,7 +49,7 @@ function renderToys(toy) { // pass this in
 
   // p
   let toyP = document.createElement('p')
-  toyP.innerText = toy.likes + " Likes" // need to interpolate to add "likes"
+  toyP.innerText = toy.likes + " Likes"
   toyDiv.appendChild(toyP)
 
   // button
@@ -101,13 +99,8 @@ function addLikes(event) {
     })
   })
   .then(response => response.json())
-  .then(renderToys)
+  .then(toy => {
+    let toyPatch = document.querySelector(`div[data-toy-id = '${toy.id}']`)
+    toyPatch.children[2].innerText = toy.likes + " Likes"
+  })
 }
-
-// Things I Need to Review for Better Understanding:
-  // creating user stories
-  // review fetch URL
-  // how to test for each case, & when (besides console.log)
-  // tried to renderToys without forEach
-  // forgot how to target event?
-  // adding likes was a wild ride
