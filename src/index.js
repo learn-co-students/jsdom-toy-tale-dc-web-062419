@@ -7,22 +7,23 @@ document.addEventListener("DOMContentLoaded", ()=>{
   console.log("hello, is it me you're looking for?")
   addBtn = document.querySelector('#new-toy-btn')
   toyForm = document.querySelector('.container')
-  fetchToys()
+  fetchAllToys()
 })
 
 /* fetches Andy's toys from the JSON server, a GET request  
-invokes callback function to manipulate the response */
-function fetchToys() {
+invokes callback function to manipulate the response array */
+function fetchAllToys() {
   fetch('http://localhost:3000/toys')
   .then(res => res.json())
-  .then(renderToys) 
-}
-
-/* the callback function to manipulate fetch response */
-function renderToys(toyArray) {
-  toyArray.forEach(toy => {
-    console.log(`${toy.name}`)
+  .then(toyArray => { 
+    toyArray.forEach(renderToys) 
   })
+}
+  
+function renderToys(toy) {
+    let toyDiv = document.createElement("div")
+    toyDiv.classList.add("card")
+    document.querySelector('#toy-collection').appendChild(toyDiv)
 }
 
 let addToy = false
