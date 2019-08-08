@@ -47,6 +47,48 @@
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
       "likes": -2
+    },
+    {
+      "name": "Spitzy",
+      "image": "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/12234114/Dachshund-On-White-01.jpg",
+      "likes": 0,
+      "id": 17
+    },
+    {
+      "name": "Spitzy",
+      "image": "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/12234114/Dachshund-On-White-01.jpg",
+      "likes": 0,
+      "id": 18
+    },
+    {
+      "name": "Spitzy",
+      "image": "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/12234114/Dachshund-On-White-01.jpg",
+      "likes": 0,
+      "id": 19
+    },
+    {
+      "name": "ursula",
+      "image": "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/12234114/Dachshund-On-White-01.jpg",
+      "likes": 4,
+      "id": 20
+    },
+    {
+      "name": "Spitzy",
+      "image": "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/12234114/Dachshund-On-White-01.jpg",
+      "likes": 0,
+      "id": 21
+    },
+    {
+      "name": "Spitzy",
+      "image": "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/12234114/Dachshund-On-White-01.jpg",
+      "likes": 7,
+      "id": 22
+    },
+    {
+      "name": "ursula",
+      "image": "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/12234114/Dachshund-On-White-01.jpg",
+      "likes": 66,
+      "id": 23
     }
   ]
 }
