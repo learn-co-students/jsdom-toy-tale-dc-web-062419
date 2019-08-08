@@ -1,6 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", function() {
   console.log('Page successfully loaded!')
+  document.getElementById('toy-collection').addEventListener("submit", newToy)
   fetchAllToys()
 })
 
@@ -47,6 +48,11 @@ function renderToys(toy) { // pass this in
 }
 
 // 2. When toyForm submitted, POST fetch, append toy div container
+function newToy(event) {
+  event.preventDefault()
+
+}
+
 // 3. When likeButton clicked, PATCH fetch, update likes
 
 addBtn.addEventListener('click', () => {
