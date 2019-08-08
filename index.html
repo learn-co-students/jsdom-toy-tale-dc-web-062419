@@ -20,6 +20,9 @@
         <br>
         <input type="text" name="image" value="" placeholder="Enter a toy's image URL..." class="input-text">
         <br>
+        <h3>Likes:</h3> <input type="range" id="range" name="likes" onchange="updateTextInput(this.value);" min="0" max="10">
+        <input type="text" id="textInput" value="">
+        <br>
         <input type="submit" name="submit" value="Create New Toy" class="submit">
       </form>
     </div>
