@@ -21,9 +21,31 @@ function fetchAllToys() {
 }
   
 function renderToys(toy) {
-    let toyDiv = document.createElement("div")
-    toyDiv.classList.add("card")
-    document.querySelector('#toy-collection').appendChild(toyDiv)
+    // renders card
+    let toyCard = document.createElement("div")
+    toyCard.classList.add("card")
+    document.querySelector('#toy-collection').appendChild(toyCard)
+    
+    // renders header
+    let cardHeader = document.createElement("h2")
+    toyCard.appendChild(cardHeader)
+    cardHeader.innerText = toy.name
+
+    // renders image
+    let toyImg = document.createElement("img")
+    toyImg.classList.add("toy-avatar")
+    toyCard.appendChild(toyImg)
+    toyImg.src = toy.image
+
+    // renders pTag
+    let pTag = document.createElement("p")
+    toyCard.appendChild(pTag)
+
+    // renders button 
+    let likeButton = document.createElement("button")
+    likeButton.classList.add("like-btn")
+    likeButton.innerText = "Like <3"
+    toyCard.appendChild(likeButton)
 }
 
 let addToy = false
