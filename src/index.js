@@ -12,19 +12,38 @@ let addToy = false
 function fetchAllToys() {
   fetch('http://localhost:3000/toys')
   .then(response => response.json()) // turn into JSON
-  .then(toys => {
-    toys.forEach(renderToys)
+  .then(toy => {
+    toy.forEach(renderToys)
   }) // do something with array
 }
 
 // Do something with array from fetch:
-function renderToys(toys) { // pass this in
+function renderToys(toy) { // pass this in
   let toyDiv = document.createElement('div') // create div
   toyDiv.classList.add('card') // give class of 'card'
   document.getElementById('toy-collection').appendChild(toyDiv) // append to toy collection div
   
   // Add Toy Info to the Card
   let toyHeader = document.createElement('h2') // h2
+  toyHeader.innerText = toy.name // add inner text (or contents)
+  toyDiv.appendChild(toyHeader) // append to toyDiv.card
+
+  // image
+  let toyImg = document.createElement('img')
+  toyImg.classList.add('toy-avatar')
+  toyImg.src = toy.image
+  toyDiv.appendChild(toyImg)
+
+  // p
+  let toyP = document.createElement('p')
+  toyP.innerText = toy.likes + " Likes" // need to interpolate to add "likes"
+  toyDiv.appendChild(toyP)
+
+  // button
+  let toyButton = document.createElement('button')
+  toyButton.classList.add('like-btn')
+  toyButton.innerText = "Like"
+  toyDiv.appendChild(toyButton)
 }
 
 // 2. When toyForm submitted, POST fetch, append toy div container
