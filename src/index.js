@@ -1,9 +1,12 @@
 
 document.addEventListener("DOMContentLoaded", function() {
   console.log('Page successfully loaded!')
-  document.getElementById('toy-collection').addEventListener("submit", newToy)
+  // document.getElementById('toy-collection').addEventListener("submit", newToy)
   fetchAllToys()
 })
+
+let addToyForm = document.querySelector('.add-toy-form')
+addToyForm.addEventListener("submit", newToy)
 
 const toyForm = document.querySelector('.container')
 const addBtn = document.querySelector('#new-toy-btn')
@@ -50,7 +53,25 @@ function renderToys(toy) { // pass this in
 // 2. When toyForm submitted, POST fetch, append toy div container
 function newToy(event) {
   event.preventDefault()
+  
+  let data = {
+    name: event.target[0].value,
+    image: event.target[1].value,
+    likes: 0
+  }
+  console.log(data)
 
+  fetch('http://localhost:3000/toys', {
+    method: "POST",
+    headers:
+    {
+      "Content-Type": "application/json",
+      Accept: "application/json"
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(renderToys)
 }
 
 // 3. When likeButton clicked, PATCH fetch, update likes
@@ -70,3 +91,4 @@ addBtn.addEventListener('click', () => {
   // review fetch URL
   // how to test for each case, & when (besides console.log)
   // tried to renderToys without forEach
+  // forgot how to target event?

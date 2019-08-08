@@ -47,6 +47,12 @@
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
       "likes": -2
+    },
+    {
+      "name": "Pizza",
+      "image": "https://www.seriouseats.com/2018/10/20181015-state-of-slice-delmar-clay-williams.jpg",
+      "likes": 0,
+      "id": 9
     }
   ]
 }
