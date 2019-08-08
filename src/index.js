@@ -75,12 +75,18 @@ function createCard(toyObj){
 
 function createToy(event){
   //Pull in name and url from the form
-  let name = event.target[0]
-  let url = event.target[1]
+  let name = event.target[0].value
+  let image = event.target[1].value
+  let toyObj = {name: name, image: image }
 
   //Create fetch request that will send form data to the server endpoint
+  fetch("http://localhost:3000/toys", {
+    method: "POST",
+    headers: {"Content-Type": "application/json", Accept: "application/json"},
+    body: JSON.stringify(toyObj)
+  })//END OF FETCH PARAMETERS
+  .then(resp => resp.json())
   
-  debugger
 
 
 
