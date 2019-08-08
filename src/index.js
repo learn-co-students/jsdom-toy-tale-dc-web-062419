@@ -51,10 +51,13 @@ function createCard(toyObj){
   let btn = document.createElement('button')
   btn.className = 'like-btn'
   btn.innerText = "Like" //I'll prolly have to add an event listener to this button that increments the p tag when clicked
+  btn.addEventListener('click', updateLikes)
 
   //Create p tag
   let pLikes = document.createElement('p')
-  pLikes.innerText = "# likes: "
+  pLikes.innerText = toyObj.likes
+  pLikes.dataset.id = toyObj.id
+
 
   // Create image element of card to be appended 
   let cardImage = document.createElement('img')
@@ -71,13 +74,14 @@ function createCard(toyObj){
   toyContainer.appendChild(card)
 
 
-} //END OF CREATE CARD FUNCTION
+}//END OF CREATE CARD FUNCTION
 
 function createToy(event){
+  event.preventDefault()
   //Pull in name and url from the form
   let name = event.target[0].value
   let image = event.target[1].value
-  let toyObj = {name: name, image: image }
+  let toyObj = {name: name, image: image, likes: 0 }
 
   //Create fetch request that will send form data to the server endpoint
   fetch("http://localhost:3000/toys", {
@@ -85,9 +89,31 @@ function createToy(event){
     headers: {"Content-Type": "application/json", Accept: "application/json"},
     body: JSON.stringify(toyObj)
   })//END OF FETCH PARAMETERS
-  .then(resp => resp.json())
-  
+  .then(resp => resp.json()) 
+  .then(toyObj => {
+    createCard(toyObj)
+  })
+
 
 
 
 }//END OF CREATE TOY FUNCTION
+
+
+//This function will trigger when the like button is clicked
+function updateLikes(event){
+  event.preventDefault()
+  let likeCount = parseInt(event.currentTarget.parentElement.childNodes[3].innerText)
+  
+  let toyId = parseInt(event.target.nextElementSibling.dataset.id)
+  // debugger
+  event.currentTarget.parentElement.childNodes[3].innerText = parseInt(event.currentTarget.parentElement.childNodes[3].innerText,10) + 1
+  fetch(`http://localhost:3000/toys/${toyId}`, {
+    method: "PATCH",
+    headers: {"Content-Type": "application/json", Accept: "application/json"},
+    body: JSON.stringify({"likes": (likeCount + 1)})
+  })
+  
+  
+
+}//END OF UPDATE TOY FUNCTION
